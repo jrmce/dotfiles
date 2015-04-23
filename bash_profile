@@ -16,3 +16,7 @@ cd
 export PATH="/usr/local/heroku/bin:$PATH"
 eval "$(rbenv init -)"
 source ~/.nvm/nvm.sh
+
+# Go Setup
+export GOPATH=$HOME/code/go
+export PATH=$GOPATH/bin:$PATH

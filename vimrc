@@ -12,18 +12,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'Raimondi/delimitMate'
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
-Plugin 'garbas/vim-snipmate'
+Plugin 'Raimondi/delimitMate'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chriskempson/base16-vim'
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,13 +32,20 @@ filetype plugin indent on    " required
 let mapleader=","
 let g:syntastic_javascript_checkers = ['jshint']
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+let delimitMate_expand_cr = 1
+
 syntax enable
 set background=dark
 colorscheme base16-ocean
 let g:pencil_terminal_italics = 1
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set shiftround
 set expandtab
 set autoindent
@@ -56,6 +63,11 @@ set history=50
 set laststatus=2
 set autowrite
 set backspace=2
+set tw=80
+set formatoptions+=t
+
+" Quick save
+nnoremap <leader>w :w!<cr>
 
 " Quick ESC
 imap jj <ESC>
@@ -65,12 +77,6 @@ nnoremap <Leader>rm :call delete(expand('%')) \| bdelete!<CR>
 
 " Ctrlp search with tags
 nnoremap <Leader>. :CtrlPTag<cr>
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
 
 " Index ctags
 map <Leader>ct :!ctags -R .<CR>
@@ -83,6 +89,9 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
+
+" Clear current search highlight
+nnoremap <silent> <esc> :noh<cr><esc>
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
