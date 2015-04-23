@@ -69,6 +69,12 @@ set formatoptions+=t
 " Quick save
 nnoremap <leader>w :w!<cr>
 
+" Quick set paste
+nnoremap <leader>p :set paste<cr>
+
+" Quick set no paste
+nnoremap <leader>np :set nopaste<cr>
+
 " Quick ESC
 imap jj <ESC>
 
