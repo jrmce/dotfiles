@@ -96,9 +96,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
 
-" Clear current search highlight
-nnoremap <silent> <esc> :noh<cr><esc>
-
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
