@@ -1,10 +1,5 @@
-# Git branch in prompt.
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
 # Two line prompt with git branch
-PS1="\u: \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n$ "
+export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h: \[\e[33m\]\w\[\e[0m\]\n\$ '
 
 # Load bash_aliases
 if [ -f ~/.bash_aliases ]; then
@@ -17,6 +12,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 eval "$(rbenv init -)"
 source ~/.nvm/nvm.sh
 
-# Go Setup
-export GOPATH=$HOME/code/go
-export PATH=$GOPATH/bin:$PATH
+export SECRET_KEY="dflkndsaasjadnfjdfjdfkkdfkadsfddsffdsdsf"
+
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
