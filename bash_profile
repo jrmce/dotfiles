@@ -15,3 +15,4 @@ source ~/.nvm/nvm.sh
 export SECRET_KEY="dflkndsaasjadnfjdfjdfkkdfkadsfddsffdsdsf"
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+export NODE_ENV="dev"

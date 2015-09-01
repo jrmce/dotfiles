@@ -24,6 +24,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chriskempson/base16-vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,15 +38,26 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-let delimitMate_expand_cr = 1
+let delimitMate_expand_cr=1
+let javascript_enable_domhtmlcss=1
+let g:javascript_conceal_function   = "ƒ"
+let g:javascript_conceal_null       = "ø"
+let g:javascript_conceal_this       = "@"
+let g:javascript_conceal_return     = "<"
+let g:javascript_conceal_undefined  = "¿"
+let g:javascript_conceal_NaN        = "ℕ"
+let g:javascript_conceal_prototype  = "#"
+let g:javascript_conceal_static     = "•"
+let g:javascript_conceal_super      = "Ω"
 
+set t_Co=256
 syntax enable
 set background=dark
-colorscheme base16-ocean
-let g:pencil_terminal_italics = 1
+colorscheme base16-eighties
 
-set tabstop=2
-set shiftwidth=2
+set cole=2
+set tabstop=4
+set shiftwidth=4
 set shiftround
 set expandtab
 set autoindent
@@ -63,7 +75,6 @@ set history=50
 set laststatus=2
 set autowrite
 set backspace=2
-set tw=80
 set formatoptions+=t
 
 " Quick save
@@ -82,10 +93,13 @@ imap jj <ESC>
 nnoremap <Leader>rm :call delete(expand('%')) \| bdelete!<CR>
 
 " Ctrlp search with tags
-nnoremap <Leader>. :CtrlPTag<cr>
+nnoremap <Leader>. :CtrlPMRUFiles<cr>
 
 " Index ctags
 map <Leader>ct :!ctags -R .<CR>
+
+" Clear search using spacebar
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " No arrows
 nnoremap <Left> :echoe "Use h"<CR>
