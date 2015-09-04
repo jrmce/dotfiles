@@ -93,7 +93,7 @@ imap jj <ESC>
 nnoremap <Leader>rm :call delete(expand('%')) \| bdelete!<CR>
 
 " Ctrlp search with tags
-nnoremap <Leader>. :CtrlPMRUFiles<cr>
+nnoremap <Leader>. :CtrlP<cr>
 
 " Index ctags
 map <Leader>ct :!ctags -R .<CR>
