@@ -8,11 +8,12 @@ fi
 cd 
 
 ### Added by the Heroku Toolbelt
+export GOPATH=$HOME/code
 export PATH="/usr/local/heroku/bin:$PATH"
-eval "$(rbenv init -)"
+export PATH="/Users/jrmce/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 source ~/.nvm/nvm.sh
 
-export SECRET_KEY="dflkndsaasjadnfjdfjdfkkdfkadsfddsffdsdsf"
-
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
-export NODE_ENV="dev"
+export SECRET_KEY=djfnadsnfnjadsnjafsdkjfjkndfsjndfjkfdskjfdskjdfsjkna
+export NODE_ENV=dev
