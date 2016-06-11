@@ -9,10 +9,11 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ervandew/supertab'
 Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
@@ -33,6 +34,7 @@ filetype plugin indent on    " required
 let mapleader=","
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_checkers=['']
+let g:airline_theme='base16_ocean'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -50,7 +52,11 @@ let g:javascript_conceal_prototype  = "#"
 let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 
+let base16colorspace=256 
+set t_Co=256
 syntax enable
+set background=dark
+colorscheme base16-ocean
 
 set cole=2
 set tabstop=2

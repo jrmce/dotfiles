@@ -7,13 +7,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 cd 
 
-### Added by the Heroku Toolbelt
-export GOPATH=$HOME/code
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/Users/jrmce/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-source ~/.nvm/nvm.sh
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-export SECRET_KEY=djfnadsnfnjadsnjafsdkjfjkndfsjndfjkfdskjfdskjdfsjkna
-export NODE_ENV=dev
+source ~/.nvm/nvm.sh
