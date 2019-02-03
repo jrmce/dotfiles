@@ -1,63 +1,20 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'kien/ctrlp.vim'
 
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ervandew/supertab'
-Plugin 'Raimondi/delimitMate'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'chriskempson/base16-vim'
-Plugin 'mustache/vim-mustache-handlebars'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
+filetype plugin indent on
+set termguicolors
+colorscheme gruvbox
+set background=dark
+let &t_ut=''
+let g:airline_theme='minimalist'
 
 let mapleader=","
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_html_checkers=['']
-let g:airline_theme='base16_ocean'
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
-
-let delimitMate_expand_cr=1
-let g:javascript_conceal_function   = "ƒ"
-let g:javascript_conceal_null       = "ø"
-let g:javascript_conceal_this       = "@"
-let g:javascript_conceal_return     = "<"
-let g:javascript_conceal_undefined  = "¿"
-let g:javascript_conceal_NaN        = "ℕ"
-let g:javascript_conceal_prototype  = "#"
-let g:javascript_conceal_static     = "•"
-let g:javascript_conceal_super      = "Ω"
-
-let base16colorspace=256 
-set t_Co=256
-syntax enable
-set background=dark
-colorscheme base16-ocean
-
 set cole=2
 set tabstop=2
 set shiftwidth=2
@@ -67,7 +24,6 @@ set autoindent
 set number
 set numberwidth=5
 set showcmd
-set cursorline
 set wildmenu
 set lazyredraw
 set showmatch
