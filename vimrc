@@ -1,17 +1,21 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'owickstrom/vim-colors-paramount'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
 Plug 'kien/ctrlp.vim'
+Plug 'fxn/vim-monochrome'
 
 call plug#end()
+
+syntax on
 filetype plugin indent on
-set termguicolors
-colorscheme gruvbox
+
+set encoding=utf-8
+set nocompatible
+
+colorscheme monochrome
 set background=dark
-let &t_ut=''
+
 let g:airline_theme='minimalist'
 
 let mapleader=","
@@ -39,10 +43,12 @@ set ruler
 set textwidth=80
 set colorcolumn=+1
 
-set list listchars=tab:»·,trail:·,nbsp:·
 
 " Open vimrc in new tab
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" <leader>sv sources .vimrc
+nnoremap <leader>sv :source $MYVIMRC<CR>:redraw<CR>:echo $MYVIMRC 'reloaded'<CR>
 
 " First character of line
 nnoremap <leader>a ^
